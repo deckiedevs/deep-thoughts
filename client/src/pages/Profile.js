@@ -2,8 +2,9 @@ import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 
-import ThoughtList from '../components/ThoughtList';
 import FriendList from '../components/FriendList';
+import ThoughtForm from '../components/ThoughtForm'; 
+import ThoughtList from '../components/ThoughtList';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import { ADD_FRIEND } from '../utils/mutations';
@@ -71,6 +72,8 @@ const Profile = () => {
                         />
                 </div>
             </div>
+
+            <div className="mb-3">{!userParam && <ThoughtForm />}</div>
         </div>
     );
 };
